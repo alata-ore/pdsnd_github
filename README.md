@@ -2,7 +2,7 @@
 24th October 2019
 
 ### Kathie's Bikeshare Project for RMIT
-Produce analytics for a Bikeshare company to review:
+###### Produce analytics for a Bikeshare company to review:
 * Popular times to travel
 * Popular starting and ending stations
 * Trip travel time
