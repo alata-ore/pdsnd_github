@@ -1,15 +1,23 @@
 ### Date created
-Include the date you created this project and README file.
+24th October 2019
 
-### Project Title
-Replace the Project Title
-
-### Description
-Describe what your project is about and what it does
+### Kathie's Bikeshare Project for RMIT
+Produce analytics for a Bikeshare company to review:
+* Popular times to travel
+* Popular starting and ending stations
+* Trip travel time
+* User statistics (where user data available)
 
 ### Files used
-Include the files used
+File | Content
+-----|--------
+project.py | Python script to collate analytics
+chicago.csv | Data from Chicago's Bikeshare users
+new_york_city.csv | Data from NYC's Bikeshare users
+washington.csv | Data from Washington's Bikeshare users
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+:sparkles: RMIT & Udacity! :sparkles:
+* [Guides @ Github](https://guides.github.com)
+* [Stack Overflow](https://stackoverflow.com/questions)
+* [More Udacity](https://udacity.github.io/git-styleguide/)
