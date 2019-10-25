@@ -17,7 +17,7 @@ new_york_city.csv | Data from NYC's Bikeshare users
 washington.csv | Data from Washington's Bikeshare users
 
 ### Credits
-:sparkles: RMIT & Udacity! :sparkles:
+:star2: RMIT & Udacity! :star2:
 * [Guides @ Github](https://guides.github.com)
 * [Stack Overflow](https://stackoverflow.com/questions)
 * [More Udacity](https://udacity.github.io/git-styleguide/)
