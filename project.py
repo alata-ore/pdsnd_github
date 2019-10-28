@@ -67,7 +67,7 @@ def load_data(city, month, day):
     # extract Start & End Stations as a new column for use in determining most common start/end
     df['Start End'] = df['Start Station'] + '--' + df['End Station']
 
-    # filter by month if applicable
+    # filter by month if user chose single month instead of all months
     if month.lower() != 'all':
         # use the index of the months list to get the corresponding int
         months = ['january', 'february', 'march', 'april', 'may', 'june']
@@ -76,7 +76,7 @@ def load_data(city, month, day):
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
 
-    # filter by day of week if applicable
+    # filter by day of week if user chose single day instead of all days
     if day.lower() != 'all':
         # use the index of the days list to get the corresponding int
         days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
