@@ -9,6 +9,8 @@ CITY_DATA = { 'chicago': './Project 2 - Bikeshare Data/chicago.csv',
               'new york city': './Project 2 - Bikeshare Data/new_york_city.csv',
               'washington': './Project 2 - Bikeshare Data/washington.csv' }
 
+available_months = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -26,7 +28,6 @@ def get_filters():
         city = input('Sorry! We don\'t have data for that city, please choose {}, {}, or {}. > '.format(available_cities[0].title(), available_cities[1].title(), available_cities[-1].title()))
 
     # TO DO: get user input for month (all, january, february, ... , june)
-    available_months = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
     month = input('Which month (January -> June) would you like to see (or type \'All\' for all months)? > ')
     while month.lower() not in available_months:
         month = input('Sorry! We don\'t have data for that month, please choose from January to June. > ')
@@ -70,8 +71,7 @@ def load_data(city, month, day):
     # filter by month if user chose single month instead of all months
     if month.lower() != 'all':
         # use the index of the months list to get the corresponding int
-        months = ['january', 'february', 'march', 'april', 'may', 'june']
-        month = months.index(month.lower()) + 1
+        month = available_months.index(month.lower()) + 1
 
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
