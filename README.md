@@ -9,6 +9,7 @@
 * User statistics (where user data available)
 
 ###### Other Notes
+* Requests user to specify which city & month/day they wish to analyse
 * Option for user to paginate through data, 5 rows at a time
 
 ### Files used
