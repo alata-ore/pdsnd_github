@@ -22,10 +22,14 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    available_cities = ['chicago', 'new york city', 'washington']
+    available_cities = ['chicago', 'new york city', 'nyc', 'washington']
     city = input('Would you like to see data for {}, {}, or {}? > '.format(available_cities[0].title(), available_cities[1].title(), available_cities[-1].title()))
     while city.lower() not in available_cities:
         city = input('Sorry! We don\'t have data for that city, please choose {}, {}, or {}. > '.format(available_cities[0].title(), available_cities[1].title(), available_cities[-1].title()))
+
+    # Accept input of 'nyc' for New York CITY_DATA
+    if city.lower() == 'nyc':
+        city = 'new york city'
 
     # TO DO: get user input for month (all, january, february, ... , june)
     month = input('Which month (January -> June) would you like to see (or type \'All\' for all months)? > ')
