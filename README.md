@@ -8,6 +8,9 @@
 * Trip travel time
 * User statistics (where user data available)
 
+###### Other Notes
+* Option for user to paginate through data, 5 rows at a time
+
 ### Files used
 File | Content
 -----|--------
