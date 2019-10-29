@@ -9,6 +9,8 @@ CITY_DATA = { 'chicago': './Project 2 - Bikeshare Data/chicago.csv',
               'new york city': './Project 2 - Bikeshare Data/new_york_city.csv',
               'washington': './Project 2 - Bikeshare Data/washington.csv' }
 
+available_months = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -20,13 +22,16 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    available_cities = ['chicago', 'new york city', 'washington']
+    available_cities = ['chicago', 'new york city', 'nyc', 'washington']
     city = input('Would you like to see data for {}, {}, or {}? > '.format(available_cities[0].title(), available_cities[1].title(), available_cities[-1].title()))
     while city.lower() not in available_cities:
         city = input('Sorry! We don\'t have data for that city, please choose {}, {}, or {}. > '.format(available_cities[0].title(), available_cities[1].title(), available_cities[-1].title()))
 
+    # Accept input of 'nyc' for New York CITY_DATA
+    if city.lower() == 'nyc':
+        city = 'new york city'
+
     # TO DO: get user input for month (all, january, february, ... , june)
-    available_months = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
     month = input('Which month (January -> June) would you like to see (or type \'All\' for all months)? > ')
     while month.lower() not in available_months:
         month = input('Sorry! We don\'t have data for that month, please choose from January to June. > ')
@@ -67,16 +72,15 @@ def load_data(city, month, day):
     # extract Start & End Stations as a new column for use in determining most common start/end
     df['Start End'] = df['Start Station'] + '--' + df['End Station']
 
-    # filter by month if applicable
+    # filter by month if user chose single month instead of all months
     if month.lower() != 'all':
         # use the index of the months list to get the corresponding int
-        months = ['january', 'february', 'march', 'april', 'may', 'june']
-        month = months.index(month.lower()) + 1
+        month = available_months.index(month.lower()) + 1
 
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
 
-    # filter by day of week if applicable
+    # filter by day of week if user chose single day instead of all days
     if day.lower() != 'all':
         # use the index of the days list to get the corresponding int
         days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
